@@ -1,11 +1,11 @@
 Name:			vo-amrwbenc
-Version:		0.1.2
-Release:		2%{?dist}
+Version:		0.1.3
+Release:		1%{?dist}
 Summary:		VisualOn AMR-WB encoder library
 Group:			System Environment/Libraries
 License:		ASL 2.0
 URL:			http://opencore-amr.sourceforge.net/
-Source0:		http://sourceforge.net/projects/opencore-amr/files/%{name}/%{name}-%{version}.tar.gz
+Source0:		http://downloads.sourceforge.net/opencore-amr/%{name}/%{name}-%{version}.tar.gz
 
 %description
 This library contains an encoder implementation of the Adaptive 
@@ -48,6 +48,9 @@ rm $RPM_BUILD_ROOT%{_libdir}/libvo-amrwbenc.la
 %{_libdir}/pkgconfig/vo-amrwbenc.pc
 
 %changelog
+* Sun Oct 11 2015 Michael Kuhn <suraia@ikkoku.de> - 0.1.3-1
+- Update to 0.1.3.
+
 * Sun Aug 31 2014 Sérgio Basto <sergio@serjux.com> - 0.1.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
