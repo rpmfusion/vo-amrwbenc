@@ -1,6 +1,6 @@
 Name:			vo-amrwbenc
 Version:		0.1.3
-Release:		5%{?dist}
+Release:		6%{?dist}
 Summary:		VisualOn AMR-WB encoder library
 Group:			System Environment/Libraries
 License:		ASL 2.0
@@ -48,6 +48,9 @@ rm $RPM_BUILD_ROOT%{_libdir}/libvo-amrwbenc.la
 %{_libdir}/pkgconfig/vo-amrwbenc.pc
 
 %changelog
+* Sun Aug 19 2018 Leigh Scott <leigh123linux@googlemail.com> - 0.1.3-6
+- Rebuilt for Fedora 29 Mass Rebuild binutils issue
+
 * Fri Jul 27 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0.1.3-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
