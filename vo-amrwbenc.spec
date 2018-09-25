@@ -1,10 +1,12 @@
 Name:			vo-amrwbenc
 Version:		0.1.3
-Release:		7%{?dist}
+Release:		8%{?dist}
 Summary:		VisualOn AMR-WB encoder library
 License:		ASL 2.0
 URL:			http://opencore-amr.sourceforge.net/
 Source0:		http://downloads.sourceforge.net/opencore-amr/%{name}/%{name}-%{version}.tar.gz
+
+BuildRequires: gcc
 
 %description
 This library contains an encoder implementation of the Adaptive 
@@ -46,6 +48,9 @@ rm %{buildroot}%{_libdir}/libvo-amrwbenc.la
 %{_libdir}/pkgconfig/vo-amrwbenc.pc
 
 %changelog
+* Tue Sep 25 2018 Nicolas Chauvet <kwizart@gmail.com> - 0.1.3-8
+- Add missing cc
+
 * Tue Sep 25 2018 Nicolas Chauvet <kwizart@gmail.com> - 0.1.3-7
 - Spec file clean-up
 
