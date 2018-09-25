@@ -1,8 +1,7 @@
 Name:			vo-amrwbenc
 Version:		0.1.3
-Release:		6%{?dist}
+Release:		7%{?dist}
 Summary:		VisualOn AMR-WB encoder library
-Group:			System Environment/Libraries
 License:		ASL 2.0
 URL:			http://opencore-amr.sourceforge.net/
 Source0:		http://downloads.sourceforge.net/opencore-amr/%{name}/%{name}-%{version}.tar.gz
@@ -15,7 +14,6 @@ framework from the Google Android project.
 
 %package        devel
 Summary:	Development files for %{name}
-Group:		Development/Libraries
 Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description    devel
@@ -27,19 +25,19 @@ developing applications that use %{name}.
 
 %build
 %configure --disable-static
-make %{?_smp_mflags}
+%make_build
 
 %install
-rm -rf %{buildroot}
-make install DESTDIR=$RPM_BUILD_ROOT 
-rm $RPM_BUILD_ROOT%{_libdir}/libvo-amrwbenc.la
+%make_install
+rm %{buildroot}%{_libdir}/libvo-amrwbenc.la
 
-%post -p /sbin/ldconfig
 
-%postun -p /sbin/ldconfig
+%ldconfig_scriptlets
+
 
 %files
-%doc COPYING README NOTICE
+%license COPYING
+%doc README NOTICE
 %{_libdir}/libvo-amrwbenc.so.*
 
 %files devel
@@ -48,6 +46,9 @@ rm $RPM_BUILD_ROOT%{_libdir}/libvo-amrwbenc.la
 %{_libdir}/pkgconfig/vo-amrwbenc.pc
 
 %changelog
+* Tue Sep 25 2018 Nicolas Chauvet <kwizart@gmail.com> - 0.1.3-7
+- Spec file clean-up
+
 * Sun Aug 19 2018 Leigh Scott <leigh123linux@googlemail.com> - 0.1.3-6
 - Rebuilt for Fedora 29 Mass Rebuild binutils issue
 
