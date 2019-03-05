@@ -1,6 +1,6 @@
 Name:			vo-amrwbenc
 Version:		0.1.3
-Release:		8%{?dist}
+Release:		9%{?dist}
 Summary:		VisualOn AMR-WB encoder library
 License:		ASL 2.0
 URL:			http://opencore-amr.sourceforge.net/
@@ -48,6 +48,9 @@ rm %{buildroot}%{_libdir}/libvo-amrwbenc.la
 %{_libdir}/pkgconfig/vo-amrwbenc.pc
 
 %changelog
+* Tue Mar 05 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0.1.3-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Tue Sep 25 2018 Nicolas Chauvet <kwizart@gmail.com> - 0.1.3-8
 - Add missing cc
 
